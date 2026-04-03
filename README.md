@@ -1,8 +1,8 @@
 # Domain Knowledge Chatbot
 
-회사 도메인 지식 기반 RAG(Retrieval-Augmented Generation) 챗봇 프로젝트.
+도메인 지식 기반 RAG(Retrieval-Augmented Generation) 챗봇 프로젝트.
 
-범용 LLM 답변이 아닌, 회사 고유의 도메인 지식(사내 규정, 시스템 가이드, 에러 해결 이력 등)을 기반으로 정확한 답변을 제공하는 것이 목표입니다.
+범용 LLM 답변이 아닌, 특정 도메인 지식(규정, 시스템 가이드, 에러 해결 이력 등)을 기반으로 정확한 답변을 제공하는 것이 목표입니다.
 
 ## 주요 기능
 
