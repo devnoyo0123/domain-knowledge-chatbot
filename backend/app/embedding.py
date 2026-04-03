@@ -1,12 +1,13 @@
 from functools import lru_cache
 
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_ollama import OllamaEmbeddings
+
+from app.config import settings
 
 
 @lru_cache(maxsize=1)
-def get_embeddings() -> HuggingFaceEmbeddings:
-    return HuggingFaceEmbeddings(
-        model_name="BAAI/bge-m3",
-        model_kwargs={"device": "cpu"},
-        encode_kwargs={"normalize_embeddings": True},
+def get_embeddings() -> OllamaEmbeddings:
+    return OllamaEmbeddings(
+        model=settings.ollama_embedding_model,
+        base_url=settings.ollama_base_url,
     )
