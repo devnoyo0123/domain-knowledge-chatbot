@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 from pydantic import BaseModel
 
 from app.config import settings
@@ -40,7 +40,7 @@ def chat(req: ChatRequest) -> ChatResponse:
     context = "\n\n".join(doc.page_content for doc in docs)
     prompt = PROMPT_TEMPLATE.format(context=context, question=req.question)
 
-    llm = ChatOpenAI(model="gpt-4o-mini", api_key=settings.openai_api_key)
+    llm = ChatOllama(model=settings.ollama_model, base_url=settings.ollama_base_url)
     response = llm.invoke(prompt)
     answer = str(response.content)
 
