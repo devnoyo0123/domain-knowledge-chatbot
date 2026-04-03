@@ -88,6 +88,32 @@ npm run dev
 
 ---
 
+## 종료 방법
+
+### 백엔드 / 프론트엔드
+
+각 터미널에서 `Ctrl + C`
+
+또는 포트로 강제 종료:
+```bash
+lsof -ti :8000 | xargs kill -9   # 백엔드
+lsof -ti :3000 | xargs kill -9   # 프론트엔드
+```
+
+### DB 컨테이너
+
+```bash
+docker-compose stop db
+```
+
+### Ollama
+
+```bash
+brew services stop ollama
+```
+
+---
+
 ## 문서
 
 - [기술 스택 결정 (ADR-001)](docs/adr/ADR-001-tech-stack.md)
